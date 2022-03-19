@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+<!-- /.card-header -->
+{% block content %}
+<form method="post" enctype='multipart/form-data'>
+    {% csrf_token %}
+<div class="card-body">
+      <h3>{{titulo}}</h3>
+      <div class="alert alert-danger alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h5><i class="icon fas fa-ban"></i> Esta apunto de eliminar un registro. Esta seguro de eliminar ? </h5>
+      </div>
+    <div class="card-footer">
+      <button type="submit" class="btn btn-danger btn-flat"><i class="fas fa-check"></i>Confirmar</button>
+        <a href="{{list_url}}" class="btn btn-primary btn-flat"><i class="fas fa-ban"></i>Cancelar</a>
+  </div>
+  <!-- /.card-body -->
+</form>
+
+{% endblock content %}
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- /.card-header -->
+<div class="card-body">
+      <h3>{{titulo}} {{ object.nombres }}</h3>
+
+
+        <p class="lead"><b>nombres:</b> {{ object.nombres }}</p> 
+        <p class="lead">cedula: {{ object.cedula }}</p> 
+        <p class="lead">fecha_registro: {{ object.fecha_registro }}</p> 
+        <p class="lead">fecha_creacion: {{ object.fecha_creacion }}</p>  
+        <p class="lead">fecha_actualizacion: {{ object.fecha_actualizacion }}</p> 
+        <p class="lead">edad: {{ object.edad }}</p> 
+        <p class="lead">salario: {{ object.salario }}</p> 
+        <p class="lead">estado: {{ object.estado }}</p> 
+        <p class="lead">foto: {{ object.foto }}</p> 
+        <p class="lead">cvitae: {{ object.cvitae }}</p> 
+
+      <a href="{{list_url}}"><button class="btn btn-primary btn-flat">Regresar</button></a>
+</div>
+  <!-- /.card-body -->
+
+
+{% endblock content %}

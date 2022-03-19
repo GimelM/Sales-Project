@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- /.card-header -->
+<div class="card-body">
+    <table id="data" class="table table-bordered table-striped">
+      <h3>{{titulo}}</h3>
+      <thead>
+      <tr>
+        <th>Nombres</th>
+        <th>Cedula</th>
+        <th>Fecha de registro</th>
+        <th>Edad</th>
+        <th>Salario</th>
+        <th>Modificacion</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+        {% for emp in object_list %}
+        <tr>
+            <td>{{ emp.nombres }}</td>
+            <td>{{ emp.cedula }}</td>
+            <td>{{ emp.fecha_registro }}</td>
+            <td>{{ emp.edad }}</td>
+            <td>{{ emp.salario }}</td>
+            <td>{{emp.fecha_actualizacion}}</td>
+            <td><a href="{% url 'EmpleadoUpdate' emp.id %}" class="btn btn-warning btn-sm btn-flat"><i class="fas fa-pen"></i></a> <a href="{% url 'EmpleadoDelete' emp.id %}" class="btn btn-danger btn-sm btn-flat"><i class="fas fa-trash"></i></a> <a href="{% url 'EmpleadoDetail' emp.id %}" class="btn btn-primary btn-sm btn-flat"><i class="fas fa-eye"></i></a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div>
+      <a href="{{list_url}}"><button class="btn btn-success btn-flat btnTest">Nuevo registro</button></a>
+    </div>
+  </div>
+  <!-- /.card-body -->
+
+
+{% endblock content %}
+
